@@ -1,0 +1,7 @@
+# Information
+name: Steven To
+description: Steven's awesome website
+
+# Build Settings
+exclude: ['README.md', 'node_modules']
+highlighter: pygments

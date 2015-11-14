@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".hamburger").on("click",function(){$(this).toggleClass("open"),$(".navbar ul").toggleClass("showing")});$("#about").offset().top;$(window).scroll(function(){var o=$(this).scrollTop();$("#about").css("top",-o/2),$("#blog-preview").css("top",-o/2)})});

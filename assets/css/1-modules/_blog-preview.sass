@@ -1,0 +1,55 @@
+#blog-preview
+  position: relative
+  top: 0
+  background-color: #485b6e
+  padding: 10px
+  z-index: 200
+  box-shadow: 0 -1px 6px 0 rgba(0, 0, 0, 0.5)
+  h1
+    margin-bottom: 30px
+    +font($quicksand, 4.6rem, lighter)
+    color: #fff
+  .blog-container
+    position: relative
+    overflow: hidden
+    display: flex
+    flex-direction: column
+    justify-content: center
+    p
+      margin-bottom: 30px
+      display: block
+      text-align: center
+      +font($proximanovali, 1.8rem, lighter)
+      color: #fff
+    .blog-showcase
+      width: 60%
+      margin: 0 auto
+      display: block
+      div
+        position: relative
+        width: 25%
+        float: left
+        background:
+          size: cover
+          repeat: no-repeat
+        &::after
+          content: ""
+          display: block
+          padding-top: 100%
+    .clear
+      clear: both
+    .read-more-container
+      display: block
+      text-align: center
+      padding: 40px 30px 30px 30px
+      .read-more
+        padding: 10px
+        +font($proximanovali, 1.8rem, lighter)
+        color: #fff
+        text-decoration: none
+        border: 2px solid #fff
+        border-radius: 3px
+        +transition(all 0.2s ease-in-out)
+        &:hover
+          color: #485B6E
+          background-color: #fff

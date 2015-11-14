@@ -1,0 +1,5 @@
+.git
+node_modules
+.sass-cache
+.jekyll-metadata
+_site
