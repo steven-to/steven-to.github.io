@@ -29,11 +29,24 @@
         li
           margin: 14px 0
           a
+            position: relative
             text-decoration: none
             color: #121212
             +font($proximanovali, 1.6rem, normal)
             +transition(all 0.2s ease-in-out)
             &:hover
               color: #a2a2a2
+            &.active
+              font-weight: bolder
+              &::after
+                content: ''
+                position: absolute
+                width: 0
+                height: 0
+                top: 6px
+                right: -12px
+                border-top: 4px solid transparent
+                border-right: 4px solid #121212
+                border-bottom: 4px solid transparent
       .hamburger
         display: none

@@ -1,0 +1,30 @@
+#works
+  position: relative
+  top: 0
+  padding: 10px
+  z-index: 300
+  box-shadow: 0 -1px 10px 0 rgba(55, 55, 55, 0.5)
+  background:
+    image: url(../img/site-img/works-bg.jpg)
+    repeat: no-repeat
+    size: cover
+  h1
+    margin-bottom: 30px
+    +font($quicksand, 4.6rem, lighter)
+    color: #fff
+  .works-container
+    display: block
+    text-align: left
+    margin: 40px 80px
+    a
+      display: block
+      +font($myhelveticaneue, 7.2rem, normal)
+      color: #fff
+      line-height: 120px
+      +transition(all 0.2s ease-in-out)
+      box-shadow: 5px 5px 15px 0 rgba(79, 79, 79, 0.3)
+      &:hover
+        opacity: 0.7
+        box-shadow: 2px 2px 5px 0 rgba(79, 79, 79, 0.3)
+      &.development
+        margin-bottom: 40px

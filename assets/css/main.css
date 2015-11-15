@@ -72,6 +72,7 @@ body {
         #main-header .header-container .navbar ul li {
           margin: 14px 0; }
           #main-header .header-container .navbar ul li a {
+            position: relative;
             text-decoration: none;
             color: #121212;
             font-family: "proxima-nova-light", "Open Sans", Verdana, sans-serif;
@@ -82,6 +83,18 @@ body {
             transition: all 0.2s ease-in-out; }
             #main-header .header-container .navbar ul li a:hover {
               color: #a2a2a2; }
+            #main-header .header-container .navbar ul li a.active {
+              font-weight: bolder; }
+              #main-header .header-container .navbar ul li a.active::after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 0;
+                top: 6px;
+                right: -12px;
+                border-top: 4px solid transparent;
+                border-right: 4px solid #121212;
+                border-bottom: 4px solid transparent; }
       #main-header .header-container .navbar .hamburger {
         display: none; }
 
@@ -105,8 +118,8 @@ body {
   position: relative;
   top: 0;
   z-index: 200;
-  box-shadow: 0 -1px 6px 0 rgba(0, 0, 0, 0.5);
-  padding: 10px; }
+  padding: 10px;
+  box-shadow: 0 -1px 10px 0 rgba(55, 55, 55, 0.5); }
   #about h1 {
     margin-bottom: 40px;
     font-family: "Quicksand", "Open Sans", Verdana, sans-serif;
@@ -132,20 +145,20 @@ body {
   background-color: #485b6e;
   padding: 10px;
   z-index: 200;
-  box-shadow: 0 -1px 6px 0 rgba(0, 0, 0, 0.5); }
+  box-shadow: 0 -1px 10px 0 rgba(55, 55, 55, 0.5); }
   #blog-preview h1 {
     margin-bottom: 30px;
     font-family: "Quicksand", "Open Sans", Verdana, sans-serif;
     font-size: 4.6rem;
     font-weight: lighter;
     color: #fff; }
-  #blog-preview .blog-container {
+  #blog-preview .blog-preview-container {
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center; }
-    #blog-preview .blog-container p {
+    #blog-preview .blog-preview-container p {
       margin-bottom: 30px;
       display: block;
       text-align: center;
@@ -153,27 +166,46 @@ body {
       font-size: 1.8rem;
       font-weight: lighter;
       color: #fff; }
-    #blog-preview .blog-container .blog-showcase {
+    #blog-preview .blog-preview-container .blog-showcase {
       width: 60%;
       margin: 0 auto;
       display: block; }
-      #blog-preview .blog-container .blog-showcase div {
+      #blog-preview .blog-preview-container .blog-showcase div.article-preview-thumb {
         position: relative;
         width: 25%;
         float: left;
+        cursor: pointer;
         background-size: cover;
         background-repeat: no-repeat; }
-        #blog-preview .blog-container .blog-showcase div::after {
+        #blog-preview .blog-preview-container .blog-showcase div.article-preview-thumb::after {
           content: "";
           display: block;
           padding-top: 100%; }
-    #blog-preview .blog-container .clear {
+        #blog-preview .blog-preview-container .blog-showcase div.article-preview-thumb div.article-preview-meta {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(26, 188, 156, 0.8);
+          padding: 5px 0 0 5px; }
+          #blog-preview .blog-preview-container .blog-showcase div.article-preview-thumb div.article-preview-meta .article-preview-title {
+            font-family: "proxima-nova-light", "Open Sans", Verdana, sans-serif;
+            font-size: 2.4rem;
+            font-weight: lighter;
+            color: #fff; }
+          #blog-preview .blog-preview-container .blog-showcase div.article-preview-thumb div.article-preview-meta .article-preview-date {
+            float: left;
+            font-family: "proxima-nova-light", "Open Sans", Verdana, sans-serif;
+            font-size: 1.4rem;
+            font-weight: lighter; }
+    #blog-preview .blog-preview-container .clear {
       clear: both; }
-    #blog-preview .blog-container .read-more-container {
+    #blog-preview .blog-preview-container .read-more-container {
       display: block;
       text-align: center;
       padding: 40px 30px 30px 30px; }
-      #blog-preview .blog-container .read-more-container .read-more {
+      #blog-preview .blog-preview-container .read-more-container .read-more {
         padding: 10px;
         font-family: "proxima-nova-light", "Open Sans", Verdana, sans-serif;
         font-size: 1.8rem;
@@ -185,9 +217,92 @@ body {
         -webkit-transition: all 0.2s ease-in-out;
         -moz-transition: all 0.2s ease-in-out;
         transition: all 0.2s ease-in-out; }
-        #blog-preview .blog-container .read-more-container .read-more:hover {
+        #blog-preview .blog-preview-container .read-more-container .read-more:hover {
           color: #485B6E;
           background-color: #fff; }
+
+#works {
+  position: relative;
+  top: 0;
+  padding: 10px;
+  z-index: 300;
+  box-shadow: 0 -1px 10px 0 rgba(55, 55, 55, 0.5);
+  background-image: url(../img/site-img/works-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; }
+  #works h1 {
+    margin-bottom: 30px;
+    font-family: "Quicksand", "Open Sans", Verdana, sans-serif;
+    font-size: 4.6rem;
+    font-weight: lighter;
+    color: #fff; }
+  #works .works-container {
+    display: block;
+    text-align: left;
+    margin: 40px 80px; }
+    #works .works-container a {
+      display: block;
+      font-family: "Helvetica Neue", "Open Sans", Verdana, sans-serif;
+      font-size: 7.2rem;
+      font-weight: normal;
+      color: #fff;
+      line-height: 120px;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      box-shadow: 5px 5px 15px 0 rgba(79, 79, 79, 0.3); }
+      #works .works-container a:hover {
+        opacity: 0.7;
+        box-shadow: 2px 2px 5px 0 rgba(79, 79, 79, 0.3); }
+      #works .works-container a.development {
+        margin-bottom: 40px; }
+
+#connect {
+  position: relative;
+  top: 0;
+  padding: 10px;
+  background-color: #F4F4F4;
+  z-index: 600;
+  box-shadow: 0 -1px 10px 0 rgba(55, 55, 55, 0.5); }
+  #connect h1 {
+    margin-bottom: 30px;
+    font-family: "Quicksand", "Open Sans", Verdana, sans-serif;
+    font-size: 4.6rem;
+    font-weight: lighter;
+    color: #121212; }
+  #connect .connect-container {
+    width: 100%;
+    text-align: center; }
+    #connect .connect-container h4 {
+      font-family: "Helvetica Neue", "Open Sans", Verdana, sans-serif;
+      font-size: 2.4rem;
+      font-weight: lighter;
+      margin-bottom: 30px; }
+    #connect .connect-container .social {
+      margin: 60px; }
+      #connect .connect-container .social a {
+        text-decoration: none;
+        display: inline-block;
+        font-family: "Font Awesome";
+        font-size: 3.2rem;
+        font-weight: lighter;
+        color: #555555;
+        margin: 0 12px;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out; }
+        #connect .connect-container .social a:nth-child(1):hover {
+          color: #5EA9DD; }
+        #connect .connect-container .social a:nth-child(2):hover {
+          color: #a67fff; }
+        #connect .connect-container .social a:nth-child(3):hover {
+          opacity: 0.5; }
+  #connect h6 {
+    font-family: "Helvetica Neue", "Open Sans", Verdana, sans-serif;
+    font-size: 1.2rem;
+    font-weight: lighter;
+    margin: 30px 0 -8px 0;
+    text-align: center; }
 
 @media screen and (max-width: 768px) {
   .content-body {
@@ -261,5 +376,17 @@ body {
           -ms-transform: rotate(-45deg);
           -o-transform: rotate(-45deg);
           transform: rotate(-45deg); }
+  #about h1 {
+    font-size: 4rem; }
   #about .about-container .intro {
-    padding-left: 30px; } }
+    padding-left: 30px; }
+  #blog-preview h1 {
+    font-size: 4rem; }
+  #blog-preview .blog-preview-container .blog-showcase {
+    width: 80%; }
+  #works h1 {
+    font-size: 4rem; }
+  #works .works-container {
+    margin: 20px 40px; }
+    #works .works-container a {
+      font-size: 4rem; } }

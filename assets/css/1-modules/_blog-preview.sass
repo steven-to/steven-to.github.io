@@ -4,12 +4,12 @@
   background-color: #485b6e
   padding: 10px
   z-index: 200
-  box-shadow: 0 -1px 6px 0 rgba(0, 0, 0, 0.5)
+  box-shadow: 0 -1px 10px 0 rgba(55, 55, 55, 0.5)
   h1
     margin-bottom: 30px
     +font($quicksand, 4.6rem, lighter)
     color: #fff
-  .blog-container
+  .blog-preview-container
     position: relative
     overflow: hidden
     display: flex
@@ -25,10 +25,11 @@
       width: 60%
       margin: 0 auto
       display: block
-      div
+      div.article-preview-thumb
         position: relative
         width: 25%
         float: left
+        cursor: pointer
         background:
           size: cover
           repeat: no-repeat
@@ -36,6 +37,20 @@
           content: ""
           display: block
           padding-top: 100%
+        div.article-preview-meta
+          position: absolute
+          top: 100%
+          left: 0
+          right: 0
+          bottom: 0
+          background-color: rgba(26, 188, 156, 0.8)
+          padding: 5px 0 0 5px
+          .article-preview-title
+            +font($proximanovali, 2.4rem, lighter)
+            color: #fff
+          .article-preview-date
+            float: left
+            +font($proximanovali, 1.4rem, lighter)
     .clear
       clear: both
     .read-more-container
