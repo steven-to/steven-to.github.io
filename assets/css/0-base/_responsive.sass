@@ -2,7 +2,7 @@
 
   .content-body
     margin-left: 0
-    margin-top: 100px
+    margin-top: 60px
 
   #main-header
     +size(100vw auto)
@@ -16,7 +16,7 @@
       width: inherit
       position: relative
       .logo
-        width: 60px !important
+        width: 40px !important
         margin: 0
       .navbar
         +size(80% auto)
@@ -37,10 +37,10 @@
         height: 36px
         display: block !important
         position: relative
-        top: 20px
+        top: 12px
         right: 25px
         cursor: pointer
-        +transition(all 0.2s ease-in-out)
+        +transition(all 150ms ease-in-out)
         span
           position: absolute
           width: 28px
@@ -63,6 +63,14 @@
               +transform(rotate(45deg))
             &:nth-child(3)
               +transform(rotate(-45deg))
+
+  #headline
+    .headline-container
+      padding: 30px 0
+      .avatar
+        width: 180px !important
+      h1, span
+        font-size: 2rem
   #about
     h1
       font-size: 4rem
@@ -84,3 +92,14 @@
       margin: 20px 40px
       a
         font-size: 4rem
+
+  #connect
+    h1
+      font-size: 4rem
+    .connect-container
+      h4
+        font-size: 1.8rem
+      .social
+        margin: 30px
+        a
+          font-size: 2.8rem
