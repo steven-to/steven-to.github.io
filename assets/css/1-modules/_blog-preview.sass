@@ -25,7 +25,8 @@
       width: 60%
       margin: 0 auto
       display: block
-      div.article-preview-thumb
+      overflow: hidden
+      .article-preview-thumb
         position: relative
         width: 25%
         float: left
@@ -46,11 +47,12 @@
           background-color: rgba(26, 188, 156, 0.8)
           padding: 5px 0 0 5px
           .article-preview-title
-            +font($proximanovali, 2.4rem, lighter)
+            +font($proximanovali, 2rem, lighter)
             color: #fff
           .article-preview-date
             float: left
-            +font($proximanovali, 1.4rem, lighter)
+            +font($proximanovali, 1.2rem, lighter)
+            color: #cecece
     .clear
       clear: both
     .read-more-container

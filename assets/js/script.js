@@ -5,37 +5,39 @@ $(document).ready(function(){
     $('.navbar ul').toggleClass('showing');
   });
 
+  // Get the offset from the top of each section.
   var aboutFromTop = $("#about").offset().top;
   var blogPreviewFromTop = $('#blog-preview').offset().top;
   var worksFromTop = $('#works').offset().top;
   var connectFromTop = $('#connect').offset().top;
 
-  $(".navbar a").on('click', function(event) {
-    event.preventDefault();
-    /* Act on the event */
-    $(".navbar ul li").find('a.active').removeClass('active');
-    $(this).addClass('active');
-  });
+  // Find if any 'a' child has the class of 'active' and remove it, then add the 'active' class to the current 'a' tag.
+  // $(".navbar a").on('click', function(event) {
+  //   event.preventDefault();
+  //   /* Act on the event */
+  //   $(".navbar ul li").find('a.active').removeClass('active');
+  //   $(this).addClass('active');
+  // });
 
-  $(".about-nav").on('click', function(event) {
-    event.preventDefault();
-    $('body').animate({scrollTop : aboutFromTop - 150}, 500);
-  });
+        $(".about-nav").on('click', function(event) {
+          event.preventDefault();
+          $('body').animate({scrollTop : aboutFromTop - 200}, 500);
+        });
 
-  $(".blog-nav").on('click', function(event) {
-    event.preventDefault();
-    $('body').animate({scrollTop : blogPreviewFromTop}, 500);
-  });
+        $(".blog-nav").on('click', function(event) {
+          event.preventDefault();
+          $('body').animate({scrollTop : blogPreviewFromTop}, 500);
+        });
 
-  $(".works-nav").on('click', function(event) {
-    event.preventDefault();
-    $('body').animate({scrollTop : worksFromTop}, 500);
-  });
+        $(".works-nav").on('click', function(event) {
+          event.preventDefault();
+          $('body').animate({scrollTop : worksFromTop}, 500);
+        });
 
-  $(".connect-nav").on('click', function(event) {
-    event.preventDefault();
-    $('body').animate({scrollTop : connectFromTop}, 500);
-  });
+        $(".connect-nav").on('click', function(event) {
+          event.preventDefault();
+          $('body').animate({scrollTop : connectFromTop}, 500);
+        });
 
 
 

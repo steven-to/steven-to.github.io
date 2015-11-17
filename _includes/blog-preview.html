@@ -4,19 +4,18 @@
     <p>I design and write articles about the modern web.</p>
 
     <div class="blog-showcase">
-      <div class='article-preview-thumb' style="background-image: url(http://www.fillmurray.com/255/255)">
-        <div class="article-preview-meta">
-          <h4 class="article-preview-title">Title</h4>
-          <p class="article-preview-date">Oct 24th, 2015</p>
-        </div>
+
+      {% for article in site.posts limit:8 %}
+      <div class='article-preview-thumb' style="background-image: url(assets/img/blog-img/covers/{{ article.post-cover }})">
+        <a href="{{ article.url }}" target="_blank">
+          <div class="article-preview-meta">
+            <h4 class="article-preview-title">{{ article.title }}</h4>
+            <p class="article-preview-date">{{ article.date | date: '%b %d, %Y' }}</p>
+          </div>
+        </a>
       </div>
-      <div class='article-preview-thumb' style="background-image: url(http://www.fillmurray.com/255/255)"></div>
-      <div class='article-preview-thumb' style="background-image: url(http://www.fillmurray.com/255/255)"></div>
-      <div class='article-preview-thumb' style="background-image: url(http://www.fillmurray.com/255/255)"></div>
-      <div class='article-preview-thumb' style="background-image: url(http://www.fillmurray.com/255/255)"></div>
-      <div class='article-preview-thumb' style="background-image: url(http://www.fillmurray.com/255/255)"></div>
-      <div class='article-preview-thumb' style="background-image: url(http://www.fillmurray.com/255/255)"></div>
-      <div class='article-preview-thumb' style="background-image: url(http://www.fillmurray.com/255/255)"></div>
+      {% endfor %}
+      
     </div>
 
     <div class="clear"></div>
