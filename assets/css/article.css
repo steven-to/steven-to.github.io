@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans'; }
+
+body {
+  padding: 80px; }
+
+::selection {
+  background: #FFEA5C; }
+
+.article-content {
+  width: 70%;
+  margin: 0 auto; }
+  .article-content h1.title {
+    font-family: Georgia;
+    font-size: 42px;
+    color: #333333; }
+  .article-content p.date {
+    font-family: Georgia;
+    color: #555555;
+    margin-bottom: 80px; }
+  .article-content div.content p {
+    line-height: 24px; }
+  .article-content div.content h1, .article-content div.content h2, .article-content div.content h3 {
+    line-height: 80px; }
+  .article-content div.content h4, .article-content div.content h5, .article-content div.content h6 {
+    line-height: 40px; }

@@ -1,0 +1,18 @@
+section#blog-preview
+  h1 blog
+  div.blog-preview-container
+    p I design and write articles about the modern web.
+    
+    div.blog-showcase
+      {% for article in site.posts limit:8 %}
+      
+      div.article-preview-thumb(style="background-image: url(assets/img/blog-img/covers/{{ article.post-cover }})")
+        a(href="{{ article.url }}" target="_blank")
+          div.article-preview-meta
+            h4.article-preview-title {{ article.title }}
+            p.article-preview-date {{ article.date | date: '%b %d, %Y' }}
+      {% endfor %}
+    
+    div.clear
+    div.read-more-container
+      a(href="blog.html" class="read-more") READ MORE

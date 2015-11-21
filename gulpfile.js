@@ -46,13 +46,21 @@ gulp.task('uglify', function(){
         .pipe(gulp.dest('assets/js/min/'))
 });
 
+gulp.task('articleCom', function(){
+  return gulp.src('assets/css/article.sass')
+        .pipe(sass())
+        .pipe(gulp.dest('_site/assets/css/'))
+        .pipe(browserSync.reload({stream:true}))
+        .pipe(gulp.dest('assets/css/'))
+});
 
 // Watch files changes and act
 gulp.task('watch', function(){
   gulp.watch('_jadefiles/*.jade', ['jade']);
   gulp.watch('assets/css/**', ['sass']);
+  gulp.watch('assets/css/article.sass', ['articleCom']);
   gulp.watch('assets/js/script.js', ['uglify']);
-  gulp.watch(['index.html', '_includes/*', '_layouts/*.html', 'assets/js/script.js'], ['jekyll-rebuild']);
+  gulp.watch(['*.html', '_includes/*', '_layouts/*.html', 'assets/js/script.js', '_posts/**'], ['jekyll-rebuild']);
 });
 
 

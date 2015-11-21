@@ -1,0 +1,47 @@
+.back-to-home
+  padding: 18px
+  +font($proximanovali, 1.8rem, normal)
+  a
+    text-decoration: none
+    &>*
+      +transition(all 150ms ease-in-out)
+    &:hover > *
+      color: #1ABC9C
+    i
+      font-size: 1.6rem
+      color: #121212
+      position: relative
+      top: -1px
+    h1
+      display: inline-block
+      font-size: 1.8rem
+      color: #121212
+      margin-left: 8px
+
+.articlesh1
+  display: block
+  padding: 40px 0 40px 0
+  text-align: center
+  +font($proximanovali, 6rem, lighter)
+
+.articles-container
+  width: 85%
+  margin: 0 auto
+  padding: 10px 100px
+  a
+    display: inline-block
+    position: relative
+    left: 50%
+    +transform(translateX(-50%))
+    padding: 15px 35px
+    text-decoration: none
+    .article-title
+      +font($proximanovali, 2.2rem, lighter)
+      color: #121212
+      +transition(all 150ms ease-in-out)
+    .article-date
+      +font($proximanovali, 1.4rem, lighter)
+      color: #555555
+      +transition(all 150ms ease-in-out)
+    &:hover > *
+      color: #8a8a8a

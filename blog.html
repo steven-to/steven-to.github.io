@@ -1,0 +1,22 @@
+---
+layout: blog-layout
+---
+
+<div class="back-to-home">
+  <a href="index.html">
+    <i class="fa fa-arrow-left"></i>
+    <h1>HOME</h1>
+  </a>
+</div>
+
+<h1 class="articlesh1">articles</h1>
+<div class="articles-container">
+
+  {% for article in site.posts %}
+  <a href="{{ article.url }}" target="_blank">
+    <h4 class="article-title">{{ article.title }}</h4>
+    <p class="article-date">{{ article.date | date: "%b %d, %Y" }}</p>
+  </a>
+  {% endfor %}
+
+</div>

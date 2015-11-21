@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+  var headerHeight;
+
   $('.hamburger').on('click', function(){
     $(this).toggleClass('open');
     $('.navbar ul').toggleClass('showing');
@@ -19,29 +21,6 @@ $(document).ready(function(){
   //   $(this).addClass('active');
   // });
 
-        $(".about-nav").on('click', function(event) {
-          event.preventDefault();
-          $('body').animate({scrollTop : aboutFromTop - 200}, 500);
-        });
-
-        $(".blog-nav").on('click', function(event) {
-          event.preventDefault();
-          $('body').animate({scrollTop : blogPreviewFromTop}, 500);
-        });
-
-        $(".works-nav").on('click', function(event) {
-          event.preventDefault();
-          $('body').animate({scrollTop : worksFromTop}, 500);
-        });
-
-        $(".connect-nav").on('click', function(event) {
-          event.preventDefault();
-          $('body').animate({scrollTop : connectFromTop}, 500);
-        });
-
-
-
-
   // $(window).scroll(function() {
   //   var scrollP = $(this).scrollTop();
   //   $('#about').css('top', -scrollP/4);
@@ -52,9 +31,38 @@ $(document).ready(function(){
 
   // Animate article's meta when the thumbnail is hovered
   $('.article-preview-thumb').hover(function() {
-    $(this).find('.article-preview-meta').animate({top: '0'}, 200);
+    $(this).find('.article-preview-meta').animate({top: '0'}, 150);
   }, function() {
-    $(this).find('.article-preview-meta').animate({top: '100%'}, 200);
+    $(this).find('.article-preview-meta').animate({top: '100%'}, 150);
+  });
+
+
+  if ( $(window).width() > 768) {
+    headerHeight = 0;
+  } else {
+    headerHeight = 60;
+  }
+
+
+
+  $(".about-nav").on('click', function(event) {
+    event.preventDefault();
+    $('html body').animate({scrollTop : aboutFromTop - (headerHeight + 200)}, 500);
+  });
+
+  $(".blog-nav").on('click', function(event) {
+    event.preventDefault();
+    $('html body').animate({scrollTop : blogPreviewFromTop - headerHeight}, 500);
+  });
+
+  $(".works-nav").on('click', function(event) {
+    event.preventDefault();
+    $('html body').animate({scrollTop : worksFromTop - headerHeight}, 500);
+  });
+
+  $(".connect-nav").on('click', function(event) {
+    event.preventDefault();
+    $('html body').animate({scrollTop : connectFromTop - headerHeight}, 500);
   });
 
 });
